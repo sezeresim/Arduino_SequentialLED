@@ -1,9 +1,21 @@
-const int LED=9;
+int ledPin[] = {2,3,4,5,6,7,8,9,10,11};
+
 void setup()
 {
-pinMode(LED,OUTPUT);
-digitalWrite(LED,HIGH);
+  for (int i =0;i<10;i++)
+  {
+    pinMode(ledPin[i], OUTPUT);
+  }
 }
-void loop()
+void loop() 
 {
+  for (int i =0;i<10;i++){
+  for(int j=0;j<10;j++){
+     digitalWrite(ledPin[j], LOW);
+     if(j==i){
+      digitalWrite(ledPin[j], HIGH);
+      delay(50);
+    }
+  }
+}
 }
